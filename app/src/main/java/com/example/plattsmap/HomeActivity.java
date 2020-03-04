@@ -6,13 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.FormatFlagsConversionMismatchException;
-
+//home
 public class HomeActivity extends AppCompatActivity {
     Button btnLogout;
     FirebaseAuth mFirebaseAuth;
@@ -29,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intToMain = new Intent(HomeActivity.this, MainActivity.class);
+                Intent intToMain = new Intent(HomeActivity.this, SignUpActivity.class);
                 startActivity(intToMain);
             }
         });

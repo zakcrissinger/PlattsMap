@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+//sign in activity
 public class LogInActivity extends AppCompatActivity {
     EditText emailID, password;
     Button btnSignIn;
@@ -29,8 +29,8 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
         mFirebaseAuth = FirebaseAuth.getInstance(); //create firebase instance
-        emailID = findViewById(R.id.editText);  //get email from textbox in MainActivity.xml
-        password = findViewById(R.id.editText2); //get password from textbox in MainActivity.xml
+        emailID = findViewById(R.id.editText);  //get email from textbox in SignUpActivity.xml
+        password = findViewById(R.id.editText2); //get password from textbox in SignUpActivity.xml
         btnSignIn = findViewById(R.id.button);
         tvSignUp = findViewById(R.id.textView);
 
@@ -89,7 +89,7 @@ public class LogInActivity extends AppCompatActivity {
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intSignUp = new Intent(LogInActivity.this, MainActivity.class);
+                Intent intSignUp = new Intent(LogInActivity.this, SignUpActivity.class);
                 startActivity(intSignUp);
             }
         });
